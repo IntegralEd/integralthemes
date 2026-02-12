@@ -17,7 +17,7 @@ jobs:
         repo:
           - IntegralEd/integral-themes-playground
           - IntegralEd/integralcareerpathways
-          - IntegralEd/edugrowthstrategy
+          - IntegralEd/integralgrowthstrategies
           - IntegralEd/integralcapacity
           - IntegralEd/integralplatforms
           - IntegralEd/integralelearning
