@@ -164,14 +164,16 @@ integralthemes/
 ├── assets/
 │   ├── brand/           # Logos and favicons
 │   └── icons/           # UI icons (SVG)
+├── components/
+│   └── widgets.html     # Universal chat widget (Chatbase)
 └── README.md
 ```
 
 ## Component Reference
 
-### Available Components
+### CSS Components
 
-The theme provides these ready-to-use components:
+The theme provides these ready-to-use CSS components:
 
 **Buttons**: `.btn`, `.btn-primary`, `.btn-secondary`
 **Cards**: `.card`, `.service-card`, `.process-card`
@@ -182,6 +184,46 @@ The theme provides these ready-to-use components:
 **Content Wrappers**: `.service-content`, `.about-content`, `.contact-content`
 **FAQ**: `.faq-item`, `.faq-question`
 **Utilities**: `.text-center`, `.mt-1`, `.mb-2`, etc.
+
+### JavaScript Widgets
+
+#### Universal Chat Widget (Chatbase)
+
+**Location:** `components/widgets.html`
+
+A shared customer support chat widget that appears across all Integral Ed microsites.
+
+**Features:**
+- Loads after 10-second delay (avoids impacting page load performance)
+- Appears bottom-right corner (Chatbase default position)
+- Single shared Chatbase ID for unified conversation history
+- No per-site configuration needed
+
+**Implementation in Microsites:**
+
+Microsites should inject this widget at build time into the `<body>` of all HTML pages.
+
+**Example build script integration:**
+```javascript
+// Read widget HTML
+const widgetHtml = fs.readFileSync(
+  'vendor/integralthemes/components/widgets.html',
+  'utf8'
+);
+
+// Inject before closing </body> tag
+const updatedHtml = htmlContent.replace(
+  '</body>',
+  `${widgetHtml}\n</body>`
+);
+```
+
+**Technical Details:**
+- **Chatbase ID**: `Yb5-ZOPsnSt9Ju6r3P7C7`
+- **Domain**: `www.chatbase.co`
+- **Load delay**: 10 seconds (10000ms)
+- **Position**: Bottom-right (default)
+- **Identical across all sites**: No customization per microsite
 
 ### Selector Compatibility
 
