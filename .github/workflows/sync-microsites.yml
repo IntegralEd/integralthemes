@@ -67,11 +67,14 @@ jobs:
 
           # Attempt subtree pull
           echo "Pulling theme updates..."
-          git subtree pull --prefix vendor/integralthemes integralthemes main --squash -m "Update vendored integralthemes from upstream
+          git subtree pull --prefix vendor/integralthemes integralthemes main --squash -m "$(cat <<'EOF'
+          Update vendored integralthemes from upstream
 
-Theme sync from integralthemes@${{ github.sha }}
+          Theme sync from integralthemes@${{ github.sha }}
 
-Co-Authored-By: Integral Themes Bot <noreply@integral-ed.com>"
+          Co-Authored-By: Integral Themes Bot <noreply@integral-ed.com>
+          EOF
+          )"
 
       - name: Push changes to microsite
         if: steps.check_vendor.outputs.ready == 'true'
