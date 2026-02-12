@@ -197,6 +197,8 @@ A shared customer support chat widget that appears across all Integral Ed micros
 - Loads after 10-second delay (avoids impacting page load performance)
 - Appears bottom-right corner (Chatbase default position)
 - Single shared Chatbase ID for unified conversation history
+- Automatically captures URL and UTM parameters as context
+- Context sent once per session (invisible to user)
 - No per-site configuration needed
 
 **Implementation in Microsites:**
@@ -223,6 +225,9 @@ const updatedHtml = htmlContent.replace(
 - **Domain**: `www.chatbase.co`
 - **Load delay**: 10 seconds (10000ms)
 - **Position**: Bottom-right (default)
+- **Context capture**: URL, path, and UTM parameters (source, medium, campaign, term, content)
+- **Context format**: `INTEGRAL_CONTEXT:{json}` sent as first message
+- **Session tracking**: Uses `sessionStorage` to send context once per session
 - **Identical across all sites**: No customization per microsite
 
 ### Selector Compatibility
