@@ -21,7 +21,7 @@ jobs:
           - IntegralEd/integralplatforms
           - IntegralEd/integralelearning
           - IntegralEd/integralmediadesign
-          # IntegralEd/mathbalance — add back when repo exists under IntegralEd org
+          - IntegralEd/mathbalance
 
     steps:
       - name: Checkout integralthemes (source)
