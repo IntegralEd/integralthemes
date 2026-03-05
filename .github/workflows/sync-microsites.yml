@@ -14,14 +14,15 @@ jobs:
       # Don't cancel other jobs if one fails
       fail-fast: false
       matrix:
-        repo:
-          - IntegralEd/integral-themes-playground
-          - IntegralEd/integralcareerpathways
-          - IntegralEd/integralgrowthstrategies
-          - IntegralEd/integralcapacity
-          - IntegralEd/integralplatforms
-          - IntegralEd/integralelearning
-
+repo:
+    - IntegralEd/integral-themes-playground
+    - IntegralEd/integralcareerpathways
+    - IntegralEd/integralgrowthstrategies
+    - IntegralEd/integralcapacity
+    - IntegralEd/integralplatforms
+    - IntegralEd/integralelearning
+    - IntegralEd/integralmediadesign
+    - IntegralEd/mathbalance
     steps:
       - name: Checkout integralthemes (source)
         uses: actions/checkout@v4
