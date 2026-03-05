@@ -14,15 +14,16 @@ jobs:
       # Don't cancel other jobs if one fails
       fail-fast: false
       matrix:
-repo:
-    - IntegralEd/integral-themes-playground
-    - IntegralEd/integralcareerpathways
-    - IntegralEd/integralgrowthstrategies
-    - IntegralEd/integralcapacity
-    - IntegralEd/integralplatforms
-    - IntegralEd/integralelearning
-    - IntegralEd/integralmediadesign
-    - IntegralEd/mathbalance
+        repo:
+          - IntegralEd/integral-themes-playground
+          - IntegralEd/integralcareerpathways
+          - IntegralEd/integralgrowthstrategies
+          - IntegralEd/integralcapacity
+          - IntegralEd/integralplatforms
+          - IntegralEd/integralelearning
+          - IntegralEd/integralmediadesign
+          - IntegralEd/mathbalance
+
     steps:
       - name: Checkout integralthemes (source)
         uses: actions/checkout@v4
@@ -100,7 +101,6 @@ repo:
           echo "This microsite does not yet have vendor/integralthemes."
           echo "To enable automatic theme sync, run:"
           echo ""
-          echo "  cd ${{ matrix.repo }}"
           echo "  git subtree add --prefix vendor/integralthemes \\"
           echo "    git@github.com:IntegralEd/integralthemes.git main --squash"
           echo ""
