@@ -70,11 +70,7 @@ jobs:
           if git diff --cached --quiet; then
             echo "✓ vendor/integralthemes already up to date — nothing to commit"
           else
-            git commit -m "Update vendored integralthemes from upstream
-
-Theme sync from integralthemes@${{ github.sha }}
-
-Co-Authored-By: Integral Themes Bot <noreply@integral-ed.com>"
+            git commit -m "Update vendored integralthemes from upstream ($(echo ${{ github.sha }} | cut -c1-7))"
             echo "✓ Committed theme updates"
             git push origin main
             echo "✓ Pushed to ${{ matrix.repo }}"
