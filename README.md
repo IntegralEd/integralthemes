@@ -11,6 +11,7 @@ This repository contains **only shared theme assets**:
 - UI components (buttons, cards, navigation, hero, footer, etc.)
 - Brand assets (logos, favicons)
 - UI icons
+- Production guides shared by every microsite (`guides/`), such as how we make screencast tours
 
 ## What This Is NOT
 
@@ -166,8 +167,16 @@ integralthemes/
 │   └── icons/           # UI icons (SVG)
 ├── components/
 │   └── widgets.html     # Sales Assistant chat bubble (integral-ed.app), all sites
+├── guides/
+│   └── screencast-tours.md  # Format and rules for case-study screencast videos
 └── README.md
 ```
+
+## Guides
+
+Process guides that apply to every microsite. They sync into each site's `vendor/integralthemes/guides/` with the theme, so a session working in any microsite can read them locally.
+
+- [Screencast tours](guides/screencast-tours.md): the five-beat format, look, synthetic-data rules, recording, voiceover, review and delivery for the case-study videos on microsite case cards.
 
 ## Component Reference
 
