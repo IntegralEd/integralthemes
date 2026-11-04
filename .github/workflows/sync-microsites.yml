@@ -67,4 +67,5 @@ jobs:
 
       - name: Summary
         if: always()
-        run: echo "✅ ${{ matrix.repo }}: Theme sync completed"
+        run: |
+          echo "✅ ${{ matrix.repo }}: Theme sync completed"
